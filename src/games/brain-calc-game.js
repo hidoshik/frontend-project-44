@@ -1,10 +1,11 @@
-import { getName, getRandomNumber, askQuestion, isCorrectAnswer, replyToUser } from '../index.js';
+import { greeting } from '../cli.js';
+import { getRandomNumber, askQuestion, isCorrectAnswer, replyToUser } from '../index.js';
 
 function getQuestionAndCorrectAnswer() {
     const operator = ['sum', 'subtract', 'multiply'];
     const randomOperator = operator[Math.floor(Math.random() * (operator.length))];
-    const a = getRandomNumber(0, 100);
-    const b = getRandomNumber(0, 100);
+    const a = getRandomNumber();
+    const b = getRandomNumber();
     switch (randomOperator) {
         case ('sum'):
             return [`${a} + ${b}`, String(a + b)];
@@ -18,8 +19,7 @@ function getQuestionAndCorrectAnswer() {
 }
 
 export function playBrainCalc() {
-    console.log("Welcome to the Brain Games!");
-    const userName = getName();
+    const userName = greeting();
     console.log('What is the result of the expression?');
     for (let round = 0; round < 3; round += 1) {
     const [question, correctAnswer] = getQuestionAndCorrectAnswer();

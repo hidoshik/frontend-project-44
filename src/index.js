@@ -1,12 +1,6 @@
 import readlineSync from "readline-sync";
 
-export function getName() {
-	const userName = readlineSync.question("May I have your name? ");
-	console.log(`Hello, ${userName}!`);
-	return userName;
-}
-
-export function getRandomNumber(min, max) {
+export function getRandomNumber(min = 0, max = 100) {
   return Math.floor(Math.random() * (max - min + 1));
 }
 
