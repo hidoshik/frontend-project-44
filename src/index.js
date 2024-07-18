@@ -1,23 +1,42 @@
-import readlineSync from "readline-sync";
+import readlineSync from 'readline-sync';
+import greeting from './cli.js';
 
 export function getRandomNumber(min = 0, max = 100) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
 export function askQuestion(question) {
-	console.log(`Question: ${question}`);
-	const answer = readlineSync.question("Your answer: ");
-	return answer;
+  console.log(`Question: ${question}`);
+  const answer = readlineSync.question('Your answer: ');
+  return answer;
 }
 
 export function isCorrectAnswer(userAnswer, correctAnswer) {
-	return correctAnswer === userAnswer;
+  return correctAnswer === userAnswer;
 }
 
 export function replyToUser(userAnswer, correctAnswer) {
-	if (isCorrectAnswer(userAnswer, correctAnswer)) {
-    console.log("Correct!");
-	} else {
+  if (isCorrectAnswer(userAnswer, correctAnswer)) {
+    console.log('Correct!');
+  } else {
     console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-	}
+  }
+}
+
+export function generateGame(rules, getQuestionAndCorrectAnswer) {
+  const userName = greeting();
+  console.log(rules);
+
+  for (let round = 0; round < 3; round += 1) {
+    const [question, correctAnswer] = getQuestionAndCorrectAnswer();
+
+    const userAnswer = askQuestion(question);
+    replyToUser(userAnswer, correctAnswer);
+
+    if (!isCorrectAnswer(userAnswer, correctAnswer)) {
+      console.log(`Let's try again, ${userName}!`);
+      return;
+    }
+  }
+  console.log(`Congratulations, ${userName}!`);
 }

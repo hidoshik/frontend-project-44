@@ -1,37 +1,38 @@
-import { greeting } from '../cli.js';
-import { getRandomNumber, askQuestion, isCorrectAnswer, replyToUser } from '../index.js';
+import {
+  getRandomNumber,
+  generateGame,
+} from '../index.js';
 
 function getQuestionAndCorrectAnswer() {
-    const operator = ['sum', 'subtract', 'multiply'];
-    const randomOperator = operator[Math.floor(Math.random() * (operator.length))];
-    const a = getRandomNumber();
-    const b = getRandomNumber();
-    switch (randomOperator) {
-        case ('sum'):
-            return [`${a} + ${b}`, String(a + b)];
-        case ('subtract'):
-            return [`${a} - ${b}`, String(a - b)];
-        case ('multiply'):
-            return [`${a} * ${b}`, String(a * b)];
-        default:
-            break;
-    }
+  const operator = ['sum', 'subtract', 'multiply'];
+  const randomOperator = operator[Math.floor(Math.random() * operator.length)];
+
+  const a = getRandomNumber();
+  const b = getRandomNumber();
+
+  let question;
+  let correctAnswer;
+
+  let result = [question, correctAnswer];
+
+  switch (randomOperator) {
+    case 'sum':
+      result = [`${a} + ${b}`, String(a + b)];
+      break;
+    case 'subtract':
+      result = [`${a} - ${b}`, String(a - b)];
+      break;
+    case 'multiply':
+      result = [`${a} * ${b}`, String(a * b)];
+      break;
+    default:
+      break;
+  }
+  return result;
 }
 
-export function playBrainCalc() {
-    const userName = greeting();
-    console.log('What is the result of the expression?');
+const rules = 'What is the result of the expression?';
 
-    for (let round = 0; round < 3; round += 1) {
-        const [question, correctAnswer] = getQuestionAndCorrectAnswer();
-
-        const userAnswer = askQuestion(question);
-        replyToUser(userAnswer, correctAnswer);
-        
-        if (!isCorrectAnswer(userAnswer, correctAnswer)) {
-            console.log(`Let's try again, ${userName}!`);
-    	    return;
-        }
-    }
-    console.log(`Congratulations, ${userName}!`);
+export default function playBrainCalc() {
+  generateGame(rules, getQuestionAndCorrectAnswer);
 }
