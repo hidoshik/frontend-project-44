@@ -21,14 +21,17 @@ function getQuestionAndCorrectAnswer() {
 export function playBrainCalc() {
     const userName = greeting();
     console.log('What is the result of the expression?');
+
     for (let round = 0; round < 3; round += 1) {
-    const [question, correctAnswer] = getQuestionAndCorrectAnswer();
-    const userAnswer = askQuestion(question);
-    replyToUser(userAnswer, correctAnswer);
-    if (!isCorrectAnswer(userAnswer, correctAnswer)) {
-        console.log(`Let's try again, ${userName}!`);
-    	return;
-    }
+        const [question, correctAnswer] = getQuestionAndCorrectAnswer();
+
+        const userAnswer = askQuestion(question);
+        replyToUser(userAnswer, correctAnswer);
+        
+        if (!isCorrectAnswer(userAnswer, correctAnswer)) {
+            console.log(`Let's try again, ${userName}!`);
+    	    return;
+        }
     }
     console.log(`Congratulations, ${userName}!`);
 }

@@ -12,15 +12,18 @@ function getCorrectAnswer(question) {
 export function playBrainEven() {
     const userName = greeting();
     console.log('Answer "yes" if the number is even, otherwise answer "no".');
+
     for (let round = 0; round < 3; round += 1) {
-    const question = getRandomNumber();
-    const correctAnswer = getCorrectAnswer(question);
-    const userAnswer = askQuestion(question);
-    replyToUser(userAnswer, correctAnswer);
-    if (!isCorrectAnswer(userAnswer, correctAnswer)) {
-        console.log(`Let's try again, ${userName}!`);
-    	return;
-    }
+        const question = getRandomNumber();
+        const correctAnswer = getCorrectAnswer(question);
+
+        const userAnswer = askQuestion(question);
+        replyToUser(userAnswer, correctAnswer);
+        
+        if (!isCorrectAnswer(userAnswer, correctAnswer)) {
+            console.log(`Let's try again, ${userName}!`);
+    	    return;
+        }
     }
     console.log(`Congratulations, ${userName}!`);
 }
