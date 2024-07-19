@@ -41,25 +41,20 @@ There are five different games to choose from. The name of the command that init
 
 <a name="brain-even"></a>
 <h4>Brain-even installation and gameplay demonstration:</h4>
-
-[![asciicast](https://asciinema.org/a/qlEL8l4ZQw4fhUK8Iy0PEJvwV.svg)](https://asciinema.org/a/qlEL8l4ZQw4fhUK8Iy0PEJvwV)
+<a href="https://asciinema.org/a/qlEL8l4ZQw4fhUK8Iy0PEJvwV" target="_blank"><img src="https://asciinema.org/a/qlEL8l4ZQw4fhUK8Iy0PEJvwV.svg" /></a>
 
 <a name="brain-calc"></a>
 <h4>Brain-calc gameplay demonstration:</h4>
-
-[![asciicast](https://asciinema.org/a/8KQVKtY1Lx8QZbrw5OsDgnEEH.svg)](https://asciinema.org/a/8KQVKtY1Lx8QZbrw5OsDgnEEH)
+<a href="https://asciinema.org/a/8KQVKtY1Lx8QZbrw5OsDgnEEH" target="_blank"><img src="https://asciinema.org/a/8KQVKtY1Lx8QZbrw5OsDgnEEH.svg" /></a>
 
 <a name="brain-gcd"></a>
 <h4>Brain-gcd gameplay demonstration:</h4>
-
-[![asciicast](https://asciinema.org/a/GHZrnKFG5GJ3dLX4RlDicJu1M.svg)](https://asciinema.org/a/GHZrnKFG5GJ3dLX4RlDicJu1M)
+<a href="https://asciinema.org/a/GHZrnKFG5GJ3dLX4RlDicJu1M" target="_blank"><img src="https://asciinema.org/a/GHZrnKFG5GJ3dLX4RlDicJu1M.svg" /></a>
 
 <a name="brain-progression"></a>
 <h4>Brain-progression gameplay demonstration:</h4>
-
-[![asciicast](https://asciinema.org/a/bBttsxLyFIxkSRyUscPZbKQQI.svg)](https://asciinema.org/a/bBttsxLyFIxkSRyUscPZbKQQI)
+<a href="https://asciinema.org/a/bBttsxLyFIxkSRyUscPZbKQQI" target="_blank"><img src="https://asciinema.org/a/bBttsxLyFIxkSRyUscPZbKQQI.svg" /></a>
 
 <a name="brain-prime"></a>
 <h4>Brain-prime gameplay demonstration:</h4>
-
-[![asciicast](https://asciinema.org/a/M7aW0KfPF0eQ0NWYJjioSyU9p.svg)](https://asciinema.org/a/M7aW0KfPF0eQ0NWYJjioSyU9p)
+<a href="https://asciinema.org/a/M7aW0KfPF0eQ0NWYJjioSyU9p" target="_blank"><img src="https://asciinema.org/a/M7aW0KfPF0eQ0NWYJjioSyU9p.svg" /></a>

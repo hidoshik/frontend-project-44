@@ -1,5 +1,6 @@
 {
   "name": "@hexlet/code",
+  "description": "This package contains five games that test your mathematical skills and your ability to solve logical problems",
   "type": "module",
   "version": "1.0.0",
   "bin": {
@@ -18,7 +19,7 @@
     "type": "git",
     "url": "git+https://github.com/hidoshik/frontend-project-44.git"
   },
-  "author": "",
+  "author": "Valeria Baryshnikova",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/hidoshik/frontend-project-44/issues"
