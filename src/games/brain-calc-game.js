@@ -3,32 +3,36 @@ import {
   generateGame,
 } from '../index.js';
 
-function getQuestionAndCorrectAnswer() {
-  const operator = ['sum', 'subtract', 'multiply'];
-  const randomOperator = operator[Math.floor(Math.random() * operator.length)];
+function evaluateExpression(firstNumber, secondNumber, operator) {
+  let result;
 
-  const a = getRandomNumber();
-  const b = getRandomNumber();
-
-  let question;
-  let correctAnswer;
-
-  let result = [question, correctAnswer];
-
-  switch (randomOperator) {
-    case 'sum':
-      result = [`${a} + ${b}`, String(a + b)];
+  switch (operator) {
+    case '+':
+      result = String(firstNumber + secondNumber);
       break;
-    case 'subtract':
-      result = [`${a} - ${b}`, String(a - b)];
+    case '-':
+      result = String(firstNumber - secondNumber);
       break;
-    case 'multiply':
-      result = [`${a} * ${b}`, String(a * b)];
+    case '*':
+      result = String(firstNumber * secondNumber);
       break;
     default:
       break;
   }
   return result;
+}
+
+function getQuestionAndCorrectAnswer() {
+  const a = getRandomNumber();
+  const b = getRandomNumber();
+
+  const operator = ['+', '-', '*'];
+  const randomOperator = operator[Math.floor(Math.random() * operator.length)];
+
+  const question = `${a} ${randomOperator} ${b}`;
+  const correctAnswer = evaluateExpression(a, b, randomOperator);
+
+  return [question, correctAnswer];
 }
 
 const rules = 'What is the result of the expression?';

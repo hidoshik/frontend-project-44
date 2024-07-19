@@ -3,23 +3,24 @@ import {
   generateGame,
 } from '../index.js';
 
-function getGcd(max, min) {
+function getGcd(firstNumber, secondNumber) {
+  const max = Math.max(firstNumber, secondNumber);
+  const min = Math.min(firstNumber, secondNumber);
+
+  // поиск НОД по алгоритму Евклида
   const gcd = min > 0 ? getGcd(min, max % min) : Math.abs(max);
-  return gcd;
+
+  return String(gcd);
 }
 
 function getQuestionAndCorrectAnswer() {
   const a = getRandomNumber();
   const b = getRandomNumber();
 
-  // поиск НОД по алгоритму Евклида
+  const question = `${a} ${b}`;
+  const correctAnswer = getGcd(a, b);
 
-  const max = Math.max(a, b);
-  const min = Math.min(a, b);
-
-  const gcd = getGcd(max, min);
-
-  return [`${a} ${b}`, String(gcd)];
+  return [question, correctAnswer];
 }
 
 const rules = 'Find the greatest common divisor of given numbers.';

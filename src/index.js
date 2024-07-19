@@ -1,39 +1,39 @@
 import readlineSync from 'readline-sync';
 import greeting from './cli.js';
 
+const roundCount = 3;
+
 export function getRandomNumber(min = 0, max = 100) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-export function askQuestion(question) {
+function askQuestion(question) {
   console.log(`Question: ${question}`);
   const answer = readlineSync.question('Your answer: ');
   return answer;
 }
 
-export function isCorrectAnswer(userAnswer, correctAnswer) {
-  return correctAnswer === userAnswer;
-}
-
-export function replyToUser(userAnswer, correctAnswer) {
-  if (isCorrectAnswer(userAnswer, correctAnswer)) {
+function replyToUser(userAnswer, correctAnswer) {
+  if (correctAnswer === userAnswer) {
     console.log('Correct!');
-  } else {
-    console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
+    return true;
   }
+
+  console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
+  return false;
 }
 
 export function generateGame(rules, getQuestionAndCorrectAnswer) {
   const userName = greeting();
   console.log(rules);
 
-  for (let round = 0; round < 3; round += 1) {
+  for (let round = 0; round < roundCount; round += 1) {
     const [question, correctAnswer] = getQuestionAndCorrectAnswer();
 
     const userAnswer = askQuestion(question);
-    replyToUser(userAnswer, correctAnswer);
+    const isCorrectAnswer = replyToUser(userAnswer, correctAnswer);
 
-    if (!isCorrectAnswer(userAnswer, correctAnswer)) {
+    if (!isCorrectAnswer) {
       console.log(`Let's try again, ${userName}!`);
       return;
     }

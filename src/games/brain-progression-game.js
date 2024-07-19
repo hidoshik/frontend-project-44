@@ -26,7 +26,9 @@ function getQuestionAndCorrectAnswer() {
     .join(' ')
     .replace(missingNumber, '..');
 
-  return [progressionWithMissingNumber, String(missingNumber)];
+  const [question, correctAnswer] = [progressionWithMissingNumber, String(missingNumber)];
+
+  return [question, correctAnswer];
 }
 
 const rules = 'What number is missing in the progression?';
