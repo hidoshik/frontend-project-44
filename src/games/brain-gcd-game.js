@@ -1,7 +1,4 @@
-import {
-  getRandomNumber,
-  generateGame,
-} from '../index.js';
+import { getRandomNumber, generateGame } from '../index.js';
 
 function getGcd(firstNumber, secondNumber) {
   const max = Math.max(firstNumber, secondNumber);
@@ -10,7 +7,7 @@ function getGcd(firstNumber, secondNumber) {
   // поиск НОД по алгоритму Евклида
   const gcd = min > 0 ? getGcd(min, max % min) : Math.abs(max);
 
-  return String(gcd);
+  return gcd;
 }
 
 function getQuestionAndCorrectAnswer() {
@@ -18,7 +15,7 @@ function getQuestionAndCorrectAnswer() {
   const b = getRandomNumber();
 
   const question = `${a} ${b}`;
-  const correctAnswer = getGcd(a, b);
+  const correctAnswer = String(getGcd(a, b));
 
   return [question, correctAnswer];
 }

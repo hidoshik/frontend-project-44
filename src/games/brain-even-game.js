@@ -1,11 +1,12 @@
-import {
-  getRandomNumber,
-  generateGame,
-} from '../index.js';
+import { getRandomNumber, generateGame } from '../index.js';
+
+function isEven(number) {
+  return number % 2 === 0;
+}
 
 function getQuestionCorrectAnswer() {
   const question = getRandomNumber();
-  const correctAnswer = question % 2 === 0 ? 'yes' : 'no';
+  const correctAnswer = isEven(question) ? 'yes' : 'no';
   return [question, correctAnswer];
 }
 

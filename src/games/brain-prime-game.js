@@ -1,7 +1,4 @@
-import {
-  getRandomNumber,
-  generateGame,
-} from '../index.js';
+import { getRandomNumber, generateGame } from '../index.js';
 
 function isPrimeNumber(num) {
   if (num < 2) {
@@ -17,7 +14,7 @@ function isPrimeNumber(num) {
 
 function getQuestionAndCorrectAnswer() {
   const question = getRandomNumber();
-  const correctAnswer = isPrimeNumber(question) === true ? 'yes' : 'no';
+  const correctAnswer = isPrimeNumber(question) ? 'yes' : 'no';
   return [question, correctAnswer];
 }
 

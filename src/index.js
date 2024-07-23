@@ -13,16 +13,6 @@ function askQuestion(question) {
   return answer;
 }
 
-function replyToUser(userAnswer, correctAnswer) {
-  if (correctAnswer === userAnswer) {
-    console.log('Correct!');
-    return true;
-  }
-
-  console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-  return false;
-}
-
 export function generateGame(rules, getQuestionAndCorrectAnswer) {
   const userName = greeting();
   console.log(rules);
@@ -31,12 +21,14 @@ export function generateGame(rules, getQuestionAndCorrectAnswer) {
     const [question, correctAnswer] = getQuestionAndCorrectAnswer();
 
     const userAnswer = askQuestion(question);
-    const isCorrectAnswer = replyToUser(userAnswer, correctAnswer);
 
-    if (!isCorrectAnswer) {
+    if (userAnswer !== correctAnswer) {
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
       console.log(`Let's try again, ${userName}!`);
       return;
     }
+
+    console.log('Correct!');
   }
   console.log(`Congratulations, ${userName}!`);
 }

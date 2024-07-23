@@ -1,25 +1,16 @@
-import {
-  getRandomNumber,
-  generateGame,
-} from '../index.js';
+import { getRandomNumber, generateGame } from '../index.js';
 
 function evaluateExpression(firstNumber, secondNumber, operator) {
-  let result;
-
   switch (operator) {
     case '+':
-      result = String(firstNumber + secondNumber);
-      break;
+      return firstNumber + secondNumber;
     case '-':
-      result = String(firstNumber - secondNumber);
-      break;
+      return firstNumber - secondNumber;
     case '*':
-      result = String(firstNumber * secondNumber);
-      break;
+      return firstNumber * secondNumber;
     default:
-      break;
+      return '';
   }
-  return result;
 }
 
 function getQuestionAndCorrectAnswer() {
@@ -30,7 +21,7 @@ function getQuestionAndCorrectAnswer() {
   const randomOperator = operator[Math.floor(Math.random() * operator.length)];
 
   const question = `${a} ${randomOperator} ${b}`;
-  const correctAnswer = evaluateExpression(a, b, randomOperator);
+  const correctAnswer = String(evaluateExpression(a, b, randomOperator));
 
   return [question, correctAnswer];
 }

@@ -14,6 +14,8 @@ You are invited to test your brain power with five quick and easy (or not so eas
 There are five different games to choose from. The name of the command that initializes the start of the game matches the name of the game itself.
 <br>
 
+<script src="https://asciinema.org/a/qlEL8l4ZQw4fhUK8Iy0PEJvwV.js" id="asciicast-qlEL8l4ZQw4fhUK8Iy0PEJvwV" async="true"></script>
+
 <dl>
 <a href="#brain-even"><dt>brain-even</dt></a>
 <dd>The game of brain-even requires the player to determine whether the number is even or not.</dd>
