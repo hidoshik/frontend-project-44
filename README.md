@@ -4,7 +4,7 @@
 
 Welcome to the Brain Games!
 
-You are invited to test your brain power with five quick and easy (or not so easy) games, every single one of which includes three rounds. In order to win you have to give a correct answer to a question presented in each round. If you happen to make a mistake, don`t get discouraged and try again. Are you ready to accept the challenge?
+You are invited to test your brain power with five quick and easy games, every single one of which includes three rounds. In order to win you have to give a correct answer to a question presented in each round. If you happen to make a mistake, don`t get discouraged and try again. 
 
 <table>
 <tr><td><a href="#brain-even">Brain-even</a></td><td><a href="#brain-calc">Brain-calc</a></td><td><a href="#brain-gcd">Brain-gcd</a></td><td><a href="#brain-progression">Brain-progression</a></td><td><a href="#brain-prime">Brain-prime</a></td></tr>
